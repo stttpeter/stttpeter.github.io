@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/06/07/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>文章标题</title>
+    <url>/2024/06/07/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1>]]></content>
+  </entry>
+  <entry>
+    <title>在mac环境下使用hexo和butterfly搭建个人博客并在github上进行部署</title>
+    <url>/2024/06/07/%E5%9C%A8mac%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8hexo%E5%92%8Cbutterfly%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E5%9C%A8github%E4%B8%8A%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="在mac环境下使用hexo和butterfly搭建个人博客并在github上进行部署"><a href="#在mac环境下使用hexo和butterfly搭建个人博客并在github上进行部署" class="headerlink" title="在mac环境下使用hexo和butterfly搭建个人博客并在github上进行部署"></a>在mac环境下使用hexo和butterfly搭建个人博客并在github上进行部署</h1><ul>
+<li>主要参考资料：<ul>
+<li><a href="http://t.csdnimg.cn/FLBOy">在Github搭建个人博客-详细步骤整理</a></li>
+<li><a href="http://t.csdnimg.cn/FLBOy">【Hexo】Hexo搭建Butterfly主题并快速美化</a></li>
+<li><a href="http://t.csdnimg.cn/A7wxQ">更换butterfly主题后报错：extends includes&#x2F;layout.pug block content #recent-posts.recent-posts include includ</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="学习思路："><a href="#学习思路：" class="headerlink" title="学习思路："></a>学习思路：</h2><p>建立个人博客的的逻辑基本为：</p>
+<blockquote>
+<p>  1、准备GIthub仓库–&gt;2、本地安装git–&gt;3、本地安装node.js–&gt;4、本地安装Hexo–&gt;5、搭建博客–&gt;6、部署到github–&gt;7、debug–&gt;8、个性化修改</p>
+</blockquote>
+<p>这里第1到6步推荐参考<a href="http://t.csdnimg.cn/FLBOy">在Github搭建个人博客-详细步骤整理</a>，这篇内容详细，对mac用户很友好。</p>
+<h3 id="这里主要记录一下在食用上述教程时候遇到的一些问题和解决方法："><a href="#这里主要记录一下在食用上述教程时候遇到的一些问题和解决方法：" class="headerlink" title="这里主要记录一下在食用上述教程时候遇到的一些问题和解决方法："></a>这里主要记录一下在食用上述教程时候遇到的一些问题和解决方法：</h3><h4 id="1、在hexo连接github时，用户名密码方式连接不上："><a href="#1、在hexo连接github时，用户名密码方式连接不上：" class="headerlink" title="1、在hexo连接github时，用户名密码方式连接不上："></a>1、在hexo连接github时，用户名密码方式连接不上：</h4><ul>
+<li>解决方法为改用ssh进行连接，这里需要在github上上传本机的公共密钥（一般路径在～&#x2F;.ssh下），随后在blog根目录下将config_中的http连接换成ssh的，例如<code>git@github.com:stttpeter/stttpeter.github.io.git</code></li>
+<li>随后上传即可连接成功</li>
+</ul>
+<h4 id="2、在部署后，页面不进行渲染，而是显示如下："><a href="#2、在部署后，页面不进行渲染，而是显示如下：" class="headerlink" title="2、在部署后，页面不进行渲染，而是显示如下："></a>2、在部署后，页面不进行渲染，而是显示如下：</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">extends includes/layout.pug block content include ./includes/mixins/post-ui.pug #recent-posts.recent-posts +postUI include includes/pagination.pug</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>解决方法为安装npm对应渲染所需要的包 参见<a href="http://t.csdnimg.cn/A7wxQ">更换butterfly主题后报错：extends includes&#x2F;layout.pug block content #recent-posts.recent-posts include includ</a></p>
+</li>
+<li><p>这里还有一个坑:exclamation:，在安装后，需要重新运行<code>hexo clean</code>, <code>hexo g</code>, <code>hexo d</code>, 进行再次编译和部署，之后即可成功看到页面</p>
+</li>
+</ul>
+<h2 id="cheating-sheet"><a href="#cheating-sheet" class="headerlink" title="cheating sheet:"></a>cheating sheet:</h2><ul>
+<li><p>创建新的博客：</p>
+<p><code>hexo new post &quot;文章标题&quot;</code></p>
+</li>
+<li><p>部署到github：</p>
+<p><code>hexo deploy</code>&#x2F;<code>hexo d</code></p>
+</li>
+<li><p>安装一键部署插件：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>修改主题后</p>
+<p><code>hexo clean</code></p>
+<p><code>hexo g</code></p>
+</li>
+<li><p>部署到本地服务器：</p>
+<p><code>hexo s</code></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+</search>

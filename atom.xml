@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Peter Shi&#39;s humble shack</title>
   
-  
+  <subtitle>陌生人，进来喝杯热可可吧</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>史博源</name>
+    <name>Peter Shi</name>
     
   </author>
   
